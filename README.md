@@ -1,2 +1,2 @@
 # course-webapp
-# For CSCB20
+# Assignment 3 for CSCB20
