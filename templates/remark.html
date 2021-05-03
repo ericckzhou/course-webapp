@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>CSCB20 - Introduction to Databases and Web Applications</title>
+	<link rel="stylesheet" href ="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="header center">
+		CSCB20 - Introduction to Databases and Web Applications
+	</div>
+	<div class="navbar">
+		<ul>
+			<li><a href ="/">Home</a></li>
+            <li><a href ="/news">News</a></li>
+			<li><a href ="/lectures">Lectures</a></li>
+			<li><a href ="/labs">Labs</a></li>
+			<li><a href ="/assignments">Assignments</a></li>
+			<li><a href ="/tests">Tests</a></li>
+			<li><a href ="/office">Office Hours</a></li>
+            <li><a href ="/team">Course Team</a></li>
+			<li><a href="/feedback">Feedback</a></li>
+            <li><a href="/links">Links</a></li>
+            <li><a class="show" href="/marks">Marks</a></li>
+			<li><a href ="https://piazza.com/class/kk052lckppx73x/home">Discussion Board</a></li>
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</div>
+    <br>
+	<h3 class="content center">Change student marks here</h3> <br>
+    <div class="form">
+        <form method="post">
+            <label for="stud">Choose a student:</label>
+            <select id="stud" name="stud">
+                {% for stud in student %}
+                <option value="{{stud.username}}">{{stud.username}}</option>
+                {% endfor %}
+            </select>
+           <br>
+		   <label for="which">Change the mark of:</label>
+            <select id = "which" name="which">
+                <option name="q1" value="q1">Quiz 1</option>
+                <option name="q2" value="q2">Quiz 2</option>
+                <option name="q3" value="q3">Quiz 3</option>
+                <option name="q4" value="q4">Quiz 4</option>
+                <option name="a1" value="a1">Assignment 1</option>
+                <option name="a2" value="a2">Assignment 2</option>
+                <option name="a3" value="a3">Assignment 3</option>
+                <option name="final" value="final">Final Exam</option>
+            </select>
+			<br>
+            <label>Enter a new mark</label><br>
+            <textarea name="newmark" placeholder="Enter here!" rows="1" cols="5"></textarea><br>
+            <br><br>
+            <input class="center" type="submit" value="Submit">
+        </form>
+		<div class="content-box"><a href="/viewrequests">View all Remarking Requests and their status</a></div>
+    </div><br>
+</body>
+<footer>
+    <hr>
+	<div class="center">
+		<p>
+			<b>CS Faculty Members:</b> <a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science">Faculty Link</a><br>
+			<b>Site created by:</b> Eric Zhou & Zhaoyue Yang & Shijun Sui<br>
+			<b>Copyright © 2021</b>
+		</p>
+		<br>
+	</div>
+</footer>
+</html>

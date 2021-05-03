@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>CSCB20 - Introduction to Databases and Web Applications</title>
+	<link rel="stylesheet" href ="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="header center">
+		CSCB20 - Introduction to Databases and Web Applications
+	</div>
+	<div class="navbar">
+		<ul>
+			<li><a href ="/">Home</a></li>
+            <li><a href ="/news">News</a></li>
+			<li><a href ="/lectures">Lectures</a></li>
+			<li><a href ="/labs">Labs</a></li>
+			<li><a href ="/assignments">Assignments</a></li>
+			<li><a href ="/tests">Tests</a></li>
+			<li><a href ="/office">Office Hours</a></li>
+            <li><a href ="/team">Course Team</a></li>
+			<li><a href="/feedback">Feedback</a></li>
+            <li><a href="/links">Links</a></li>
+            <li><a class="show" href="/marks">Marks</a></li>
+			<li><a href ="https://piazza.com/class/kk052lckppx73x/home">Discussion Board</a></li>
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</div>
+    <br>
+	<div class="content">
+		<div class="content-box">
+            {% for stud in student %}
+            <h3>Marks for {{stud.username}}</h3>
+            <hr>
+            <br>
+			<div class="container">
+                <!-- quiz header -->
+				<div><h4>Quiz 1</h4></div>
+				<div><h4>Quiz 2</h4></div>
+				<div><h4>Quiz 3</h4></div>
+				<div><h4>Quiz 4</h4></div>
+                <br>
+                <div><h4>{{stud.q1}}</h4></div>
+                <div><h4>{{stud.q2}}</h4></div>
+                <div><h4>{{stud.q3}}</h4></div>
+                <div><h4>{{stud.q4}}</h4></div>
+			</div>
+            <br><br>
+            <div class="container">
+                <!-- assigment & finalheader -->
+                <div><h4>Assignment 1</h4></div>
+                <div><h4>Assignment 2</h4></div>
+                <div><h4>Assignment 3</h4></div>
+                <div><h4>Final</h4></div>
+                <br>
+                <div><h4>{{stud.a1}}</h4></div>
+                <div><h4>{{stud.a2}}</h4></div>
+                <div><h4>{{stud.a3}}</h4></div>
+                <div><h4>{{stud.final}}</h4></div>
+            </div>
+            <br><br>
+            {% endfor %}
+		</div>
+	</div>
+    <div class="form">
+        <form method="post">
+            <label for="remark-req">Remark Request</label>
+            <br>
+            <select name="what">
+                <option name="q1" value="q1">Quiz 1</option>
+                <option name="q2" value="q2">Quiz 2</option>
+                <option name="q3" value="q3">Quiz 3</option>
+                <option name="q4" value="q4">Quiz 4</option>
+                <option name="a1" value="a1">Assignment 1</option>
+                <option name="a2" value="a2">Assignment 2</option>
+                <option name="a3" value="a3">Assignment 3</option>
+                <option name="final" value="final">Final Exam</option>
+            </select>
+            <br><br>
+            <textarea name="why" placeholder="Why do you believe it deserves a remark?" rows="15" cols="35"></textarea><br>
+            <br>
+            <input class="center" type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+<footer>
+    <hr>
+	<div class="center">
+		<p>
+			<b>CS Faculty Members:</b> <a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science">Faculty Link</a><br>
+			<b>Site created by:</b>Eric Zhou & Zhaoyue Yang & Shijun Sui<br>
+			<b>Copyright © 2021</b>
+		</p>
+		<br>
+	</div>
+</footer>
+</html>

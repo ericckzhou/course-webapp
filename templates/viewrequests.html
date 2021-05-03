@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>CSCB20 - Introduction to Databases and Web Applications</title>
+    <link rel="stylesheet" href ="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="header center">
+		CSCB20 - Introduction to Databases and Web Applications
+	</div>
+	<div class="navbar">
+		<ul>
+			<li><a href ="/">Home</a></li>
+            <li><a href ="/news">News</a></li>
+			<li><a href ="/lectures">Lectures</a></li>
+			<li><a href ="/labs">Labs</a></li>
+			<li><a href ="/assignments">Assignments</a></li>
+			<li><a href ="/tests">Tests</a></li>
+			<li><a href ="/office">Office Hours</a></li>
+            <li><a href ="/team">Course Team</a></li>
+			<li><a href="/feedback">Feedback</a></li>
+            <li><a href="/links">Links</a></li>
+            <li><a class="show" href="/marks">Marks</a></li>
+			<li><a href ="https://piazza.com/class/kk052lckppx73x/home">Discussion Board</a></li>
+			<li><a href="/logout">Logout</a></li>
+		</ul>
+	</div>
+	<div class = "content center">
+		<div class="content-box">
+			{% for remark in remarks %}
+			<h3>Request from {{remark.username}}</h3><br>
+			<div class="container">
+				<div><h4>Requested a remark of: </h4><p>{{remark.what}}</p></div>
+				<div><h4>Reason:</h4><p>{{remark.why}}</p></div>
+				<div><h4>Request Status:</h4><p>{{remark.status}}</p></div>
+			</div>
+			{% endfor %}
+			<br>
+		</div>
+	</div>
+</body>
+<footer>
+    <hr>
+	<div class="center">
+		<p>
+			<b>CS Faculty Members:</b> <a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science">Faculty Link</a><br>
+			<b>Site created by:</b> Eric Zhou & Zhaoyue Yang & Shijun Sui<br>
+			<b>Copyright © 2021</b>
+		</p>
+		<br>
+	</div>
+</footer>
+</html>

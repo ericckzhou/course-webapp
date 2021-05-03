@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>CSCB20 - Introduction to Databases and Web Applications</title>
+	<link rel="stylesheet" href ="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+	<div class="header center">
+		CSCB20 - Introduction to Databases and Web Applications
+	</div>
+	<div class="navbar">
+		<ul>
+			<li><a href ="/">Home</a></li>
+            <li><a class="show" href="/register">Register</a></li>
+			<li><a href ="/login">Login</a></li>
+		</ul>
+	</div>
+	<div class="content center">
+		<div class="content-box">
+			<h3>Register for a new account!</h3>
+			<hr>
+			<form method="post">
+                <p>Choose your account type: 
+                <select name="type">
+                    <option value="student">Student</option>
+                    <option value="instructor">Instructor</option>
+                </select>
+                </p>
+                <p>Enter your first name: <input type="text" name="fname"></p>
+                <p>Enter your last name: <input type="text" name="lname"></p>
+                <p>Enter your desired username: <input type="text" name="username"></p>
+                <p>Enter your desired password: <input type="password" name="password"></p>
+                <p><input type=submit value="Sign Up"></p>
+            </form>
+            <br>
+		</div>
+	</div>
+</body>
+<footer>
+    <hr>
+	<div class="center">
+		<p>
+			<b>CS Faculty Members:</b> <a href="https://www.utsc.utoronto.ca/cms/faculty-of-computer-science">Faculty Link</a><br>
+			<b>Site created by:</b> Eric Zhou & Zhaoyue Yang & Shijun Sui<br>
+			<b>Copyright © 2021</b>
+		</p>
+		<br>
+	</div>
+</footer>
+</html>
